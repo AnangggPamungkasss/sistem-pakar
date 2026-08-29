@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #2e59d9, #224abe);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.navbar .navbar-brand {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.main {
+    height: 100vh;
+}
+
+.main img {
+    max-width: 100%;
+    height: auto;
+    max-height: 70px;
+    display: block;
+}
+
+.sidebar {
+    width: 240px;
+    background: #2d2d2d;
+    color: white;
+    transition: width 0.3s;
+    overflow-x: hidden;
+    white-space: nowrap;
+    min-height: 100vh;
+    padding-top: 15px;
+}
+
+
+.sidebar a {
+    color: #ddd;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 4px 8px;
+    transition: all 0.3s;
+}
+
+.sidebar.sidebar-collapsed {
+    width: 60px;
+}
+
+.sidebar a:hover {
+    background: black;
+    transform: translateX(5px);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background: #4e73df;
+    color: #fff;
+}
+
+.sidebar a i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar a:hover i{
+    transform: scale(1.2);
+}
+
+.sidebar.sidebar-collapsed a span {
+    display: none;
+}
+
+/* Content area */
+.content {
+    background: #f5f7fa;   /* abu lembut biar beda dengan card */
+    min-height: 100vh;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+/* Heading di content */
+.content h1, .content h2, .content h3 {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Card khusus dalam content */
+.content .card {
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+.content .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+
+.card {
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    color: black; 
+    flex: 1;
+}
+
+.card:hover {
+transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-body {
+    display: flex; 
+    flex-direction: column; 
+    position: relative;
+    padding: 20px; 
+}
+
+.card h5 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.card h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0; 
+}
+
+.card:focus, .card:active {
+    outline: none;
+    border: none;
+}
+
+.card.tampil-data:hover {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) ;
+    cursor: default;
+}
+
+/* Aturan khusus untuk gambar di proses diagnosa */
+.card.diagnosa img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 120px; /* opsional, bisa disesuaikan */
+}
+
+
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.icon-container i{
+    font-size: 30px;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-right: 10px;
+    width: auto;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: auto;
+    min-width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.wrap-text {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+}
+
+.custom-table th, 
+.custom-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    vertical-align: top;
+}
+
+.custom-table.bp th:nth-child(1) { width: 5%; }   
+.custom-table.bp th:nth-child(2) { width: 15%; } 
+.custom-table.bp th:nth-child(3) { width: 35%; } 
+.custom-table.bp th:nth-child(4) { width: 30%; } 
+.custom-table.bp th:nth-child(5) { width: 15%; } 
+
+/* Contoh lebar kolom untuk Cedera */
+.custom-table.cedera th:nth-child(1) { width: 10%; } 
+.custom-table.cedera th:nth-child(2) { width: 30%; } 
+.custom-table.cedera th:nth-child(3) { width: 45%; } 
+.custom-table.cedera th:nth-child(4) { width: 15%; } 
+
+/* Contoh lebar kolom untuk Gejala */
+.custom-table.gejala th:nth-child(1) { width: 10%; } 
+.custom-table.gejala th:nth-child(2) { width: 40%; } 
+.custom-table.gejala th:nth-child(3) { width: 35%; }
+.custom-table.gejala th:nth-child(4) { width: 15%; } 
+
+td {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    vertical-align: top;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center; 
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block; 
+    }
+
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; 
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    td:before {
+        content: attr(data-label); 
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+}
+
+/* === NOTIFIKASI DROPDOWN STYLE === */
+.notifikasi-dropdown {
+    width: 340px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 8px;
+    border: none !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.notification-item {
+    list-style: none;
+    background-color: #fff;
+    margin-bottom: 8px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.notification-item:hover {
+    background-color: #f1f5f9;
+    transform: scale(1.01);
+}
+
+.notification-item.belum-dibaca {
+    border-left: 4px solid #0d6efd;
+    background-color: #f8f9fa;
+    font-weight: 500;
+}
+
+.notification-item.dibaca {
+    border-left: 4px solid transparent;
+    opacity: 0.9;
+}
+
+.notif-message {
+    color: #212529;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.notif-time {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+.btn-tandai {
+    background-color: transparent;
+    border: 1px solid #0d6efd;
+    color: #0d6efd;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    line-height: 18px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-tandai:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* Scrollbar */
+.notifikasi-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+.notifikasi-dropdown::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 3px;
+}
+.notifikasi-dropdown::-webkit-scrollbar-thumb:hover {
+    background-color: #6c757d;
+}

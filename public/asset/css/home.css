@@ -1,0 +1,159 @@
+/* ====== FONT & TEKS ====== */
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* lebih modern dari Arial */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Heading global */
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+    color: #222;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar a {
+    color: white !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.navbar a:hover {
+    color: #ffeb3b !important;
+}
+
+/* ====== CARD ====== */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* ====== SECTION ====== */
+section {
+    padding: 80px 0;
+}
+section:nth-of-type(even) {
+    background-color: #f0f4f8; /* sedikit biru abu */
+}
+
+/* ====== HERO ====== */
+
+/* Hero Section Fix */
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* solusinya tambahkan background yang kontras */
+    background: linear-gradient(
+        rgba(0,0,0,0.6), 
+        rgba(0,0,0,0.6)
+    );
+
+    color: white;
+}
+
+#home h1 {
+    font-size: 3rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+#home p {
+    font-size: 1.3rem;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+/* Section Diagnosa */
+#diagnosa {
+    display: flex;
+    align-items: center;       /* vertikal tengah */
+    justify-content: center;   /* horizontal tengah */
+    text-align: center;
+    min-height: 100vh;         /* supaya pas di layar penuh */
+    background: #f5f7fa;       /* biar beda dengan section lain */
+    padding: 60px 20px;
+}
+
+/* Card Diagnosa */
+.diagnosa-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.diagnosa-card h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Container tombol diagnosa */
+.diagnosa-card .btn-container {
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center; 
+    gap: 15px;  
+    text-align: center;               
+}
+
+/* Tombol diagnosa */
+.diagnosa-card .btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diagnosa-card .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+
+/* Tombol hero */
+.btn-main {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+.btn-main:hover {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    transform: translateY(-4px);
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 20px 0;
+}
+footer a {
+    color: #00f2fe;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
